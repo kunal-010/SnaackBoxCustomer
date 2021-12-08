@@ -35,7 +35,7 @@ const HeaderMenu = () => {
         visible={visible}
         anchor={
             <Text onPress={showMenu}>
-                <Icon name="dots-vertical" type="materialCommunity" size={35} />
+                <Icon name="shopping-cart" type="fa" size={31} />
             </Text>
         }
         onRequestClose={hideMenu}

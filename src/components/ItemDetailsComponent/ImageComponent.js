@@ -5,14 +5,12 @@ import styles from './styles';
 function ImageComponent({image}) {
   
   return (
-    <View style={styles.imageContainer}>
-      <View>
+      <View style={{margin:10}}>
         <Image
           style={styles.detailPhoto}
           source={image}
         />
       </View>
-    </View>
   );
 }
 

@@ -8,12 +8,17 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import AppNavigator from './src/navigations';
+import { View } from 'react-native';
+import NoNetworkBar from './src/components/common/NoNetworkBar';
+import GlobalProvider from './src/context/Provider';
   
 const App = () => {
  
 
   return (
-    <AppNavigator />
+    <GlobalProvider>
+      <AppNavigator />
+    </GlobalProvider>
   );
 };
 

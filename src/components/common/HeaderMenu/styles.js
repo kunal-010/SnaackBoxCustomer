@@ -5,6 +5,7 @@ export default StyleSheet.create({
         height: '100%', 
         alignItems: 'center', 
         justifyContent: 'center',
-        marginRight: 5
+        marginRight: 5,
+        flexDirection: 'row'
     }
 });

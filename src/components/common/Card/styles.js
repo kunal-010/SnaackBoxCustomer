@@ -14,11 +14,11 @@ export default StyleSheet.create({
      shadowOpacity: 1,
      shadowRadius: 2,
      marginHorizontal: 10,
-     marginVertical: 10,
+     marginTop: 10,
      
   },
   cardContent: {
-      marginHorizontal: 18,
+      marginHorizontal: 10,
       marginVertical:10
   }
 });

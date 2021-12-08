@@ -1,48 +1,62 @@
 import React from 'react'
-import {useNavigation} from '@react-navigation/native';
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, Image, TouchableOpacity, ActivityIndicator, SectionList } from 'react-native'
 import styles from './styles';
-import DATA from './../../assets/data/data';
-import colors from './../../assets/theme/colors';
 import Icon from './../common/Icon';
-import {SUBMENU} from './../../constants/routeNames';
+import {CATEGORY, HOME, ITEM_DETAILS, SUBMENU} from './../../constants/routeNames';
+import colors from '../../assets/theme/colors';
+import CustomButton from './../common/CustomButton';
+import SearchBar from '../common/SearchBar';
+import CardComponent from '../CardComponent';
 
-const MenuComponent = ({navigation}) => {
+const MenuComponent = ({
+    navigation,
+    loading,
+    foodItems,
+    onChangeText,
+    onSearch,
+    searchedFoodItems
+}) => {
+
     const renderItem = ({ item }) => {
         return (
-            <TouchableOpacity 
-                style={styles.item} 
-                onPress={() => {
-                    navigation.navigate(SUBMENU, {item});
-                }}
-            >
-                <View style={styles.content}>
-                    <Image height={70} width={70} source={item.image} style={styles.image}/>
-                    <Text style={styles.title}>{item.title}</Text>
-                </View>
-                <View style={styles.arrowContainer}>
-                    <Icon name="right"  type="ant" size={21} color={colors.grey} />
-                </View>
-            </TouchableOpacity>
+            <CardComponent item={item} navigation={navigation}/>
         );    
     };
     
-    return (
-        <View style={styles.wrapper}>
-            <FlatList
-                renderItem={renderItem}
-                data={DATA}
-                keyExtractor={(item) => String(item.title)}
-                ItemSeparatorComponent={() => (
-                    <View
-                      style={{height: 0.5, backgroundColor: colors.grey}}></View>
-                )}
-                ListHeaderComponent={() => (
-                    <Text style={[styles.header]} >Menu</Text>
-                )}
-            />
+    const onChangeTextFunction = (value) => {
+        onChangeText(value);
+    }
 
-            
+    return (
+        <View style={styles.wrapper}> 
+            <View style={{marginHorizontal: 10}}>
+                <SearchBar 
+                    placeholder="Search here..."
+                    style={{fontSize:25}}
+                    icon={
+                        <TouchableOpacity onPress={onSearch}>
+                            <Icon name="search" type="fa" size={22} color={colors.secondary}/>
+                        </TouchableOpacity>
+                    }
+                    iconPosition="right"
+                    onChangeText={onChangeTextFunction}
+                />
+            </View>
+            {loading && (
+                <View style={{paddingVertical: 100, paddingHorizontal: 100}}>
+                    <ActivityIndicator color={colors.primary} size="large" />
+                </View>
+            )}
+            {!loading && 
+                <FlatList
+                    renderItem={renderItem}
+                    data={searchedFoodItems.length === 0 ? foodItems: searchedFoodItems}
+                    keyExtractor={(item) => String(item._id)}
+                    ListFooterComponent={
+                        <View style={{height:150}}></View>
+                    }
+                /> 
+            } 
         </View>
     )
 }

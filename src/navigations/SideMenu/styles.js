@@ -3,10 +3,9 @@ import colors from '../../assets/theme/colors';
 
 export default StyleSheet.create({
   logoImage: {
-    height: 150,
-    width: 300,
+    height: 100,
+    width: 150,
     alignSelf: 'center',
-    marginTop: 30,
   },
 
   item: {
@@ -18,12 +17,25 @@ export default StyleSheet.create({
   },
 
   itemText: {
-    fontSize: 25,
+    fontSize: 21,
     paddingVertical: 7,
-    paddingLeft: 20,
+    paddingLeft: 10,
     color: 'black'
   },
   icon : {
     marginLeft:12
+  },
+  avatar : {
+    borderRadius: 100,
+    height: 70,
+    width:70,
+    marginTop: 10,
+    marginLeft: 10
+  },
+  username: {
+    fontSize: 20,
+    marginLeft:15,
+    color: 'black',
+    width: '60%'
   }
 });

@@ -4,7 +4,7 @@ export default {
     accent: '#4895ef',
     danger: '#f72585',
     success: '#4cc9f0',
-    grey: '#414040',
+    grey: '#8c7373',
     white: '#ffffff',
     dialer: '#12b562'
 };

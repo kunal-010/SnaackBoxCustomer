@@ -2,43 +2,93 @@ import {StyleSheet} from 'react-native';
 import colors from './../../assets/theme/colors';
 
 export default StyleSheet.create({
-
-  content: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },    
   wrapper: {
-    backgroundColor: colors.white,
-    flex:1,
+    // marginVertical: 10
   },
   image: {
-      height: 70,
-      width: 70,
-      borderRadius: 100,
-      marginLeft: 10
+    height: 160,
+    width:'40%',
+    borderBottomLeftRadius: 15,
+    borderTopLeftRadius: 15
   },
   item: {
-      flexDirection: 'row',
-      marginVertical: 10,
-      justifyContent: 'space-between'
+    marginTop: 10,
+    marginHorizontal: 10,
+    backgroundColor: colors.white,
+    borderRadius: 15
   },
-  title: {
-      fontSize: 25,
-      marginLeft: 20,
-      color: 'black'
+  price: {
+    color: colors.grey,
+    fontSize: 18,
+    marginLeft: 5
   },
-  arrow: {
-      marginRight: 10
+  priceContainer: {
+    flexDirection: 'row',
+    alignItems:'center',
+    marginRight: 2
   },
-  arrowContainer: {
-      justifyContent: "center",
-      marginRight: 10
+  name: {
+    fontSize: 20,
+    color: 'black',
   },
-  header: {
-    fontSize: 45,
-    color: colors.secondary,
-    paddingLeft: 20,    
-    borderBottomWidth: 0.5,
-    borderBottomColor: 'black'
-  }
+  container: {
+    flexDirection: 'row',
+  },
+  content: {
+    marginTop: 30,
+    marginLeft: 10
+  },
+  unavailable: {
+    backgroundColor: 'red',
+    position: 'absolute',
+    width: 115,
+    color: colors.white,
+    fontSize: 18,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    alignSelf: 'flex-end'
+  },
+  addButton: {
+    width:100,
+    height: 45,
+    marginTop: 20,
+    // alignSelf: 'flex-end',
+    // marginVertical: 20,
+    // marginRight: 10,
+    borderRadius: 25
+  },
+  quantityBox: {
+    flexDirection: 'row',
+    marginTop: 20,
+    // alignSelf: 'flex-end',
+    // marginVertical: 10,
+    // marginRight: 10,
+    alignItems: 'center'
+  },
+  minusButton: {
+    backgroundColor: colors.primary,
+    width:40,
+    height: 45,
+    alignItems: 'center',
+    // borderRadius: 100,
+    borderBottomLeftRadius: 20,
+    borderTopLeftRadius: 20
+  },
+  plusButton: {
+    backgroundColor: colors.primary,
+    width:40,
+    height: 45,
+    alignItems: 'center',
+    // borderRadius: 100,
+    borderBottomRightRadius: 20,
+    borderTopRightRadius: 20
+  },
+  numberBox: {
+    backgroundColor: colors.white,
+    fontSize: 25,
+    color: 'black',
+    width:20,
+    marginLeft:11,
+    marginRight:4
+  },
 });

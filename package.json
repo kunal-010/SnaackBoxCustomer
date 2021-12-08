@@ -10,9 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.13",
+    "@react-native-community/netinfo": "^7.1.2",
     "@react-navigation/drawer": "^6.1.8",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
+    "axios": "^0.24.0",
     "metro-hermes-compiler": "^0.66.2",
     "node-watch": "^0.7.2",
     "react": "17.0.2",
@@ -23,6 +26,7 @@
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
     "react-native-share": "^7.2.0",
+    "react-native-snap-carousel": "^3.9.1",
     "react-native-splash-screen": "^3.2.0",
     "react-native-vector-icons": "^8.1.0"
   },
