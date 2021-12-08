@@ -124,7 +124,7 @@ const SideMenu = ({navigation}) => {
         </View>
         <View style={{height: 1.5, backgroundColor: 'black', marginTop: 10}}></View>
 
-        <View style={{paddingHorizontal: 0,marginTop:10}}>
+        {/* <View style={{paddingHorizontal: 0,marginTop:10}}>
           {menuItems.map(({name, icon, onPress}) => (
             <TouchableOpacity onPress={onPress} key={name} style={[styles.item,{backgroundColor: activeTab == name ? colors.secondary : colors.primary}]}>
               <View 
@@ -135,7 +135,7 @@ const SideMenu = ({navigation}) => {
               <Text style={styles.itemText}>{name}</Text>
             </TouchableOpacity>
           ))}
-        </View>
+        </View> */}
       </Container>
     </SafeAreaView>
   );
